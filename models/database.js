@@ -1,0 +1,1 @@
+// This file is no longer needed with Sequelize\n// Database configuration is now in config/database.js
