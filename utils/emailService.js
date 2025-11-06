@@ -15,6 +15,11 @@ const sendSiteVisitNotification = async (visitData) => {
     from: process.env.EMAIL_USER,
     to: process.env.CONTACT_EMAIL,
     subject: `📅 Site Visit Request - ${service_type.replace('-', ' ').toUpperCase()}`,
+    attachments: [{
+      filename: 'companyLogo.jpg',
+      path: './public/companyLogo.jpg',
+      cid: 'companylogo'
+    }],
     html: `
       <!DOCTYPE html>
       <html>
@@ -34,11 +39,9 @@ const sendSiteVisitNotification = async (visitData) => {
       <body>
         <div class="container">
           <div class="header">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                <span style="color: #28a745; font-weight: bold; font-size: 24px;">P</span>
-              </div>
-              <div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px;">
+              <img src="cid:companylogo" alt="Prakriti Aircon Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover; margin-right: 10px;" />
+              <div style="margin-left: 10px;">
                 <h1 style="margin: 0; font-size: 28px;">Prakriti Aircon</h1>
                 <p style="margin: 0; font-size: 14px; opacity: 0.9;">Premium HVAC Solutions</p>
               </div>
@@ -99,6 +102,11 @@ const sendContactNotification = async (contactData) => {
     from: process.env.EMAIL_USER,
     to: process.env.CONTACT_EMAIL,
     subject: `🔔 New Customer Inquiry - ${service.replace('-', ' ').toUpperCase()}`,
+    attachments: [{
+      filename: 'companyLogo.jpg',
+      path: './public/companyLogo.jpg',
+      cid: 'companylogo'
+    }],
     html: `
       <!DOCTYPE html>
       <html>
@@ -117,11 +125,9 @@ const sendContactNotification = async (contactData) => {
       <body>
         <div class="container">
           <div class="header">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                <span style="color: #667eea; font-weight: bold; font-size: 24px;">P</span>
-              </div>
-              <div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px;">
+              <img src="cid:companylogo" alt="Prakriti Aircon Logo" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover; margin-right: 10px;" />
+              <div style="margin-left: 10px;">
                 <h1 style="margin: 0; font-size: 28px;">Prakriti Aircon</h1>
                 <p style="margin: 0; font-size: 14px; opacity: 0.9;">Premium HVAC Solutions</p>
               </div>
